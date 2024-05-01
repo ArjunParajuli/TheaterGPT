@@ -2,22 +2,24 @@ export const validateEmailAndPwSignIn = (email, password) =>{
     const emailValidate = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email); // returns true if email is validated
     const passwordValidate = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(password);
 
+    // console.log("In SignIn func")
+
     if(!emailValidate) return "Invalid Email";
     if(!passwordValidate) return "Password too weak";
 
     return null;
 }
 
-export const validateEmailAndPwSignUp = (email, password, name, confirmPw)=>{
+export const validateEmailAndPwSignUp = (email, password, confirmPw)=>{
     const emailValidate = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
     const passwordValidate = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(password);
-    const nameValidate = /(^[A-Za-z]{3,16})([ ]{0,1})([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})/.test(name);
+    
+    // console.log("In SignUp func")
 
-    if(!nameValidate) return "Enter Valid Name";
     if(!emailValidate) return "Invalid Email";
     if(!passwordValidate) return "Password too weak";
 
-    if(password !== confirmPw) return "Passwords don't match";
+    if(confirmPw && (password !== confirmPw)) return "Passwords don't match";
 
     return null;
 }

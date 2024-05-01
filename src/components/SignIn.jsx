@@ -1,15 +1,20 @@
 import React, { useState } from 'react'
 import Header from './Header'
-import SignInForm from './SignInForm'
+import LoginForm from './LoginForm'
 
 const SignIn = () => {
+  const [isSignIn, setIsSignIn] = useState(true);
   return (
     <div className='w-full relative'>
-            <img className='absolute object-cover' src="https://assets.nflxext.com/ffe/siteui/vlv3/c0b69670-89a3-48ca-877f-45ba7a60c16f/2642e08e-4202-490e-8e93-aff04881ee8a/IN-en-20240212-popsignuptwoweeks-perspective_alpha_website_small.jpg"
+            <img className='absolute object-cover w-full h-screen' src="/backgroundimg.jpg"
             alt='bg'>
             </img>
         <Header />
-       <SignInForm />
+        <div >
+        {/* <img className='absolute inset-0 top-48 left-48' src="/watching_movie.png" alt="dog watching movie"></img> */}
+        <LoginForm isSignIn={isSignIn} setIsSignIn={setIsSignIn}  />
+        </div>
+       
     </div>
   )
 }
