@@ -15,3 +15,22 @@ export const API_OPTIONS =  {
 
 // image cdn url
 export const IMG_CDN = "https://image.tmdb.org/t/p/w500";
+
+export const LANG_OPTIONS = [
+  {
+    identifier: 'en',
+    name: "English"
+  },
+  {
+    identifier: 'hi',
+    name: "Hindi"
+  },
+  {
+    identifier: 'es',
+    name: "Spanish"
+  },
+  {
+    identifier: 'ge',
+    name: "German"
+  }
+]

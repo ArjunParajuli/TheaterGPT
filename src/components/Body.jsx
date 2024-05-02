@@ -2,6 +2,7 @@ import React from 'react'
 import SignIn from './SignIn'
 import Browse from './Browse'
 import { RouterProvider, createBrowserRouter} from 'react-router-dom'
+import AIRecommendationPage from './AIRecommendationPage'
 
 const Body = () => {
   const appRouter = createBrowserRouter([
@@ -13,6 +14,10 @@ const Body = () => {
       path: '/browse',
       element: <Browse />
     },
+    {
+      path: '/ai_recommendation',
+      element: <AIRecommendationPage />
+    }
   ])
 
   // moved onAuthStateChanged(runs whenever the user signs in or signs out) inside header bcoz useNavigate() can be used only inside <RouterProvider /> 
