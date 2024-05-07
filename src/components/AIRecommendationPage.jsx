@@ -4,7 +4,7 @@ import AIMovieSuggestions from './AIMovieSuggestions'
 
 const AIRecommendationPage = () => {
   return (
-    <div>
+    <div >
       <AISearchBar />
       <AIMovieSuggestions />
     </div>

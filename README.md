@@ -38,8 +38,9 @@ Implementation:
         - MovieCards
 
     
-Movie Recommendation using GPT:
--  
+Movie Recommendation using Gemini:
+-> Fistly, we call use the Gemini API and ask for some recommendations based on the entered text and the Gemini API will give us the movie names as results. Now we search for these movies in the TMDB and fetch their details. 
+NOTE:calling the Gemini API from react is not safe bcoz the secret information like GEMINI_API_KEY is exposed. So we must make the Gemini API calls through the server side using nodejs. 
 
         
         

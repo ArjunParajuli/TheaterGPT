@@ -5,10 +5,9 @@ import { signOut } from 'firebase/auth';
 import { useSelector } from 'react-redux';
 import { onAuthStateChanged } from 'firebase/auth';
 import { addUser, removeUser } from '../redux/userSlice';
-import { toggleAISearchView } from '../redux/aiSlice';
 import { useDispatch} from 'react-redux'; 
 import { FaRobot } from "react-icons/fa";
-
+import { toggleAISearchSelected } from '../redux/aiSlice';
 
 const Header = () => {
 const navigate = useNavigate();
@@ -28,7 +27,7 @@ const dispatch = useDispatch();
     }else{
       // User has signed out
       dispatch(removeUser());
-      navigate('/ai_recommendation');
+      navigate('/');
     }
   });
 
@@ -46,6 +45,7 @@ signOut(auth).then(() => {
   
 }
 
+
   return (
     <div className={`px-14 absolute w-full pt-8 `}>
 
@@ -59,8 +59,7 @@ signOut(auth).then(() => {
         <div className='text-white'>Not sure what to watch? Try AI recommendation</div>
       <button className="bg-green-500 hover:bg-green-700 text-white font-semibold px-3 py-1 rounded-md shadow-md flex items-center gap-2" 
       onClick={()=>{
-        dispatch(toggleAISearchView())
-        navigate('/ai_recommendation')
+        dispatch(toggleAISearchSelected())
       }}>
        <FaRobot className='text-2xl ' /> <span>AI Search</span>
       </button>

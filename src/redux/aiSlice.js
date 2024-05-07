@@ -3,14 +3,21 @@ import { createSlice } from "@reduxjs/toolkit";
 const aiSlice = createSlice({
     name: 'ai',
     initialState: {
-        showAISearch: false,  // initially don't show 
+        aiSearchSelected: false,
+        recommendedMovieNames: null,
+        recommendedMovieDetails: null,
     },
     reducers: {
-        toggleAISearchView: (state)=>{  // used to show and hide gptSearch view
-            state.showAISearch = !state.showAISearch;
+        toggleAISearchSelected: (state) =>{
+            state.aiSearchSelected = !state.aiSearchSelected;
+        },
+        addRecommendedMovies: (state, action) =>{
+            const {movieNames, movieDetails} = action.payload;
+            state.recommendedMovieNames = movieNames;
+            state.recommendedMovieDetails = movieDetails;
         }
     }
 })
 
-export const { toggleAISearchView } = aiSlice.actions;
+export const { toggleAISearchSelected, addRecommendedMovies } = aiSlice.actions;
 export default aiSlice.reducer;

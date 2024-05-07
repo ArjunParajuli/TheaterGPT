@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import MovieList from "./MovieList";
+import { useSelector } from "react-redux";
 
 const AIMovieSuggestions = () => {
-  return (
-    <div>
-        AIMovieSuggestions
-    </div>
-  )
-}
+  const { recommendedMovieNames, recommendedMovieDetails } = useSelector(
+    (state) => state?.ai
+  );
+  if (!recommendedMovieNames || !recommendedMovieDetails) return;
 
-export default AIMovieSuggestions
+  console.log(recommendedMovieDetails);
+
+  return (
+    <div className="mt-36">
+      {recommendedMovieNames.map((name, index) => {
+        return <MovieList key={name} title={name} movies={recommendedMovieDetails[index]} />;
+      })}
+    </div>
+  );
+};
+
+export default AIMovieSuggestions;

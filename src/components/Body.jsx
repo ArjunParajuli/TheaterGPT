@@ -2,7 +2,7 @@ import React from 'react'
 import SignIn from './SignIn'
 import Browse from './Browse'
 import { RouterProvider, createBrowserRouter} from 'react-router-dom'
-import AIRecommendationPage from './AIRecommendationPage'
+import MovieDetails from './MovieDetails'
 
 const Body = () => {
   const appRouter = createBrowserRouter([
@@ -15,8 +15,8 @@ const Body = () => {
       element: <Browse />
     },
     {
-      path: '/ai_recommendation',
-      element: <AIRecommendationPage />
+      path: '/movieDetails',
+      element: <MovieDetails />
     }
   ])
 
