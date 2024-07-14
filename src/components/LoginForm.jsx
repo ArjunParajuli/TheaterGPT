@@ -112,7 +112,7 @@ const LoginForm = ({ isSignIn, setIsSignIn }) => {
   return (
     <form
       onSubmit={(event) => event.preventDefault()}
-      className="absolute inset-0 top-24 mx-auto w-[450px] h-[650px] pt-[50px] px-[68px] pb-[30px] border bg-black bg-opacity-60 rounded-lg"
+      className="absolute inset-0 top-24 mx-auto w-[400px] h-[500px] sm:w-[450px] sm:h-[650px] pt-[50px] px-[68px] pb-[30px] border bg-black bg-opacity-60 rounded-lg"
     >
       <div className="flex flex-col gap-8">
         <div className="text-[32px] font-semibold text-white">
@@ -130,16 +130,18 @@ const LoginForm = ({ isSignIn, setIsSignIn }) => {
             />
           }
           <input
-            placeholder="Enter your Email"
+            placeholder="Email: test@gmail.com"
             ref={email}
             type="email"
             className="bg-[#333333] opacity-70 w-[314px] h-[50px] rounded-sm pl-[16px] text-white"
+            defaultValue="test@gmail.com"
           />
           <input
             type="password"
             ref={pw}
-            placeholder="Password"
+            placeholder="Password: Test@123"
             className="bg-[#333333] opacity-70 w-[314px] h-[50px] pl-[16px] rounded-sm text-white"
+            defaultValue="Test@123"
           />
           {!isSignIn &&
             <input

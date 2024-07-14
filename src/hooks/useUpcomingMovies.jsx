@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import { API_OPTIONS } from "../utils/constants.js";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addUpcomingMovies } from "../redux/moviesSlice.js";
 
 // this custom hook fetches & puts all the movie data inside the movie slice
 
 const useUpcomingMovies = () => {
+  const upcomingMovies = useSelector(state => state?.movies?.upcomingMovies);
   const dispatch = useDispatch();
 
   // fetching the tmdb movies data and updating the store with this data
@@ -17,7 +18,7 @@ const useUpcomingMovies = () => {
   };
 
   useEffect(() => {
-    getUpcomingMovies();
+    !upcomingMovies && getUpcomingMovies();
   }, []);
 };
 

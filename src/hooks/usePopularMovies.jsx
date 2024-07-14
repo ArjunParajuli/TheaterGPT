@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import { API_OPTIONS } from "../utils/constants.js";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addPopularMovies } from "../redux/moviesSlice.js";
 
 // this custom hook fetches & puts all the movie data inside the movie slice
 
 const usePopularMovies = () => {
+  const popularMovies = useSelector(state => state?.movies?.popularMovies)
   const dispatch = useDispatch();
 
   // fetching the tmdb movies data and updating the store with this data
@@ -17,7 +18,7 @@ const usePopularMovies = () => {
   };
 
   useEffect(() => {
-    getPopularMovies();
+    !popularMovies && getPopularMovies();
   }, []);
 };
 

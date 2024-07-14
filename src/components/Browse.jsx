@@ -16,6 +16,7 @@ const Browse = () => {
   useTopRatedMovies();
   useUpcomingMovies();
 
+
   const aiSearchSelected = useSelector((state) => state?.ai?.aiSearchSelected);
 
   return (

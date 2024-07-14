@@ -47,24 +47,24 @@ signOut(auth).then(() => {
 
 
   return (
-    <div className={`px-14 absolute w-full pt-8 `}>
+    <div className="px-14 absolute w-full pt-8" >
 
       <div className='flex justify-between'>
-      <div className='flex flex-col'>
+      <div className='flex flex-col hidden md:block'>
       <img src="/logo.png" className={`shadow-lg ring-2 ring-gray-300 ring-offset-2 ring-offset-gray-100 ring-opacity-50`} alt='logo'></img>
       </div> 
 
       {user && (
-      <div className='flex h-[32px] gap-3 z-20 items-center'>
-        <div className='text-white'>Not sure what to watch? Try AI recommendation</div>
-      <button className="bg-green-500 hover:bg-green-700 text-white font-semibold px-3 py-1 rounded-md shadow-md flex items-center gap-2" 
+      <div className='flex h-[32px] gap-2 sm:gap-3 z-20 items-center'>
+        <div className='text-white hidden md:block'>Not sure what to watch? Try AI recommendation</div>
+      <button className="bg-green-500 hover:bg-green-700 text-white md:font-semibold p-2 md:px-3 md:py-1 rounded-md shadow-md flex items-center gap-2" 
       onClick={()=>{
         dispatch(toggleAISearchSelected())
       }}>
-       <FaRobot className='text-2xl ' /> <span>AI Search</span>
+       <FaRobot className='text-sm sm:text-xl hidden sm:block' /> <span>AI Search</span>
       </button>
       <img src="/profile.png" alt="profile"></img>
-      <button className='bg-[#E50914] py-0 rounded-md w-[76px] h-[32px] ' onClick={clickHandler}>Sign Out</button>
+      <button className='bg-[#E50914] p-2 rounded-md text-sm md:text-md' onClick={clickHandler}>Sign Out</button>
       </div>
       )}
       

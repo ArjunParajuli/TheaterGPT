@@ -69,7 +69,7 @@ run();
 
   return (
     <>
-      <div className="flex justify-end px-8 mt-8 ">
+      <div className="flex justify-end mx-0 mt-8 ">
         <select
           className="bg-gray-900 text-white rounded-md"
           ref={langRef}

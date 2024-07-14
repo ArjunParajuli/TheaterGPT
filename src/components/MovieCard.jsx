@@ -19,7 +19,7 @@ const MovieCard = ({movie}) => {
     return(
       <>
      { movie?.poster_path &&
-    <div className=' hover:scale-125 transition-transform duration-300'>
+    <div className='w-24 md:w-36 hover:scale-125 transition-transform duration-300'>
         <img src={srcImg} alt="movie poster" onClick={clickHandler} />
     </div>
      }
